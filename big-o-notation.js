@@ -50,3 +50,46 @@
 // Counting is hard!
 // Depending on what we count, the number of operations can be as low as 2n or as high as 5n + 2
 // But regardless of the exact number, the number of operations grows roughly proportionally with n
+
+// Section 2-9
+
+// Introducing....Big O
+// Big O Notation is a way to formalize fuzzy counting
+// It allows us to talk formally about how the runtime of an algorithm grows as the inputs grow
+
+// Big O Definition
+// We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases
+// - f(n) could be linear (f(n) = n)
+// - f(n) could be quadratic (f(n) = n²)
+// - f(n) could be constant (f(n) = 1)
+// - f(n) cloud be something entirely different!
+
+// Another Example
+// function countUpAndDown(n) {
+//   console.log("Going Up!");
+//   for (let i = 0; i < n; i++) {
+//     console.log(i);
+//   }
+
+//   console.log("At the top! \nGoing down...");
+//   for (let j = n - 1; j >= 0; j--) {
+//     console.log(j);
+//   }
+//   console.log("Back down. Bye!");
+// }
+
+// countUpAndDown(10);
+// Number of operations is (eventually) bounded by a multiple of n(say, 10n)
+// O(n)
+
+// OMG More Example
+// function printAllPairs(n) {
+//   for (var i = 0; i < n; i++) {
+//     for (var j = 0; j < n; j++) {
+//       console.log(i, j);
+//     }
+//   }
+// }
+
+// O(n) operation inside of an O(n) operation.
+// O(n²)
