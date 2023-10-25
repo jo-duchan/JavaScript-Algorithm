@@ -93,3 +93,44 @@
 
 // O(n) operation inside of an O(n) operation.
 // O(n²)
+
+// Section 2-10
+
+// Simplifying Big O Expressions
+// When determining the time complexity of an algorithm, there are some helpful rule of thumbs for Big O expressions.
+
+// Constants Don't Matter
+// O(2n)   -> O(n)
+// O(500)  -> O(1)
+// O(13n²) -> O(n²)
+// O(n+10) -> O(n)
+
+// Big O Shorthands
+// - Analzing complexity with Big O can get complicated
+// - There are several rules of thumb that can help
+// - these rules won't ALWAYS wrok, but are a helpful starting point
+
+// 1. Arithmetic operations are constant
+// 2. Variable assignment is constant
+// 3. Accessing elements in an array(by index) or object (by key) is constant
+// 4. In a loop times the complexity of whatever happens inside of the loop
+
+// A Couple More Examples
+
+// function logAtLeast5(n) {
+//   for (var i = 1; i <= Math.max(5, n); i++) {
+//     console.log(i);
+//   }
+// }
+
+// logAtLeast5(1);
+// O(n)
+
+// function logAtMost5(n) {
+//   for (var i = 1; i <= Math.min(5, n); i++) {
+//     console.log(i);
+//   }
+// }
+
+// logAtMost5(10);
+// O(1)
