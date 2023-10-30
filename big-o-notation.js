@@ -169,3 +169,28 @@
 //   return newArr;
 // }
 // O(n) space!
+
+// Section 2-12
+
+// Logarithms
+// We've encountered some of the most common complexities: O(1), O(n), O(n²)
+// Sometimes Big O expressions involve more complex mathematical expressions
+// One that appears more often than you might like is the logarithm!
+
+// Wait, what's a log again?
+// log₂(8) = 3 -> 2³=8
+
+// Wut.
+// This isn't math course, so here's a rule of thumb.
+// The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
+
+// Who Cares?
+// Certain searching algorithms have logarithmic time complexity.
+// Efficient sorting algorithms involve logarithms.
+// Recursion sometimes involves logarithmic space complecity.
+
+// Recap
+// - To analyze the performance of an algorithm, we use Big O Notation
+// - Big O Notation can give us a high level understanding of the thime or space complexity of an algorithm
+// - The time or space complexity (an measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm
+// - Big O Notation is everywhere, so get lots of practice!
