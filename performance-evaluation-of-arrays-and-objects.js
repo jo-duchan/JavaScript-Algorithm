@@ -43,3 +43,16 @@
 
 // 배열을 추가하거나 삭제하는 작업은 배열에 인덱스도 영향을 받기 때문에 비어있는 배열을 제외하고는
 // push와 pop이 shift와 unshift보다 작업 속다가 빠르다.
+
+// Section 3-17. 빅오 배열 메소드
+
+// Big O of Array Operations
+// push - O(1)
+// pop - O(1)
+// shift - O(n)
+// unshift - O(n)
+// concat - O(n)
+// slice - O(n)
+// splice - O(n)
+// sort - O(n * log n)
+// forEach/map/filter/reduce/etc. - O(n) 
