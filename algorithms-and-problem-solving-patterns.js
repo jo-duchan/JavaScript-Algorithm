@@ -34,3 +34,11 @@
 // 5. How should I label the important pieces of data that are a part of the problem?
 
 // Write a function which takes two numbers and returns their sum.
+
+// Section 4-21. 2단계:구체적 예제들
+
+// Explore Examples
+// - Start with Simple Examples
+// - Progress to More Complex Examples
+// - Explore Examples with Empty Inputs
+// - Explore Examples with Invalid Inputs
