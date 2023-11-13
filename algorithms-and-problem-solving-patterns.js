@@ -87,27 +87,27 @@
 //     return an object with keys that are lowercase alphanumeric characters is the string; values should be the counts for those characters
 // }
 
-function charCount(str) {
-    // make object to return at end
-    var result = {};
-    // loop over string, for each character...
-    for (var i = 0; i < str.length; i++) {
-        var char = str[i].toLowerCase();
-        // - if the char is a number/letter AND is a key in object, add one to count
-        if (result[char] > 0) {
-            result[char]++;
-        }
-        // - if the char is a number/letter AND not in object, add it to object and set value to 1
-        else {
-            result[char] = 1;
-        };
-    }
+// function charCount(str) {
+//     // make object to return at end
+//     var result = {};
+//     // loop over string, for each character...
+//     for (var i = 0; i < str.length; i++) {
+//         var char = str[i].toLowerCase();
+//         // - if the char is a number/letter AND is a key in object, add one to count
+//         if (result[char] > 0) {
+//             result[char]++;
+//         }
+//         // - if the char is a number/letter AND not in object, add it to object and set value to 1
+//         else {
+//             result[char] = 1;
+//         };
+//     }
     
-    // if character is something else (space, period, etc.) don't do anything
-    // return object at end
-    return result;
-}
-console.log(charCount("Hi there!"));
+//     // if character is something else (space, period, etc.) don't do anything
+//     // return object at end
+//     return result;
+// }
+// console.log(charCount("Hi there!"));
 // Section 4-23. 4단계:해결 또는 단순화
 
 // Simplify
@@ -115,3 +115,44 @@ console.log(charCount("Hi there!"));
 // - Temporarily ignore that difficulty
 // - Write a simplified solution
 // - Then incorporate that difficulty back in
+
+// Section 4-24. 5단계:되돌아 보기와 리팩터(Refactor)
+
+// Refactoring Questions
+// - Can you check the result?
+// - Can you derive the result differently?
+// - Can you understand it at a glance?
+// - Can you use the result or method for some other problem?
+// - Can you improve the performance of your solution?
+// - Can you think of other ways to refactor?
+// - How have other people solved this problem?
+
+// Before
+// function charCount(str) {
+//     var obj = {};
+//     for (var i = 0; i < str.length; i++) {
+//         var char = str[i].toLowerCase();
+//         if (/[a-z0-9]/.test(char)) {
+//             if (obj[char] > 0) {
+//                 obj[char]++;
+//             } else {
+//                 obj[char] = 1;
+//             }
+//         }
+//     }
+//     return obj;
+// }
+
+// After
+function charCount(str) {
+    var obj = {};
+    for (var char of str) {
+        char = char.toLowerCase();
+        if (/[a-z0-9]/.test(char)) {
+            obj[char] = ++obj[char] || 1;
+        }
+    }
+    return obj;
+}
+
+console.log(charCount("Hi there!"));
