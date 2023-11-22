@@ -63,3 +63,17 @@
 //     return true;
 //   }
 // }
+
+// Section 5-29. 빈도수 세기:애너그램 도전 과제
+
+// Anagrams
+// Given two string, write a function to determine if the secound string is an anagram of the first.
+// An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+validAnagram("", ""); // true
+validAnagram("aaz", "zza"); // false
+validAnagram("anagram", "nagaram"); // true
+validAnagram("rat", "car"); // false
+validAnagram("awesome", "awesom"); // false
+validAnagram("qwerty", "qeywrt"); // true
+validAnagram("texttwisttime", "timetwisttext"); // true
