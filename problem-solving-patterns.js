@@ -251,3 +251,48 @@ function maxSubarraySum(arr, num) {
 
 //Time Complexity - O(N)
 maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+
+// Section 5-35. 분할과 정복 패턴
+
+// Divide and Conquer
+// This pattern involves dividing a data set into smaller chunks and than repeating a process with a subset of data.
+// This pattern can tremendously decrease time complexity
+
+search([1, 2, 3, 4, 5, 6], 4); // 3
+search([1, 2, 3, 4, 5, 6], 6); // 5
+search([1, 2, 3, 4, 5, 6], 11); // -1
+
+// A naive solution
+// function search(arr, val) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === val) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// Linear Search
+// Time Complexity O(N)
+
+// Refactor
+function search(arr, val) {
+  let min = 0;
+  let max = arr.length;
+
+  while (min <= max) {
+    let middle = Math.floor((min + max) / 2);
+    let currentElement = arr[middle];
+
+    if (currentElement < val) {
+      min = middle + 1;
+    } else if (currentElement > val) {
+      max = middle - 1;
+    } else {
+      return middle;
+    }
+  }
+  return -1;
+}
+
+// Time Complexity - Log(N) - Binary Search!
