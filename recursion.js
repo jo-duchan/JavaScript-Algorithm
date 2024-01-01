@@ -35,3 +35,29 @@
 // Why do I care?
 // - You're used to function being pushed on the call stack and popped off when they are done
 // - When we write recursive functions, we keep pushing new functions onto the call stack!
+
+// Section 7-44. 첫번째 재귀 함수
+
+// How recursive function work
+// Invoke the same function with a different input until you reach your base case!
+
+// Base Case
+// The condition when the recursion ends.
+// This is the most important concept to understand
+
+// Two essential parts of a recursive function!
+// - Base Case
+// - Different Input
+
+// Our first recursive function
+function countDown(num) {
+  if (num <= 0) {
+    console.log("All done!");
+    return;
+  }
+  console.log(num);
+  num--;
+  countDown(num);
+}
+
+countDown(10);
