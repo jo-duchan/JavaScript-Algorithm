@@ -50,14 +50,24 @@
 // - Different Input
 
 // Our first recursive function
-function countDown(num) {
-  if (num <= 0) {
-    console.log("All done!");
-    return;
-  }
-  console.log(num);
-  num--;
-  countDown(num);
+// function countDown(num) {
+//   if (num <= 0) {
+//     console.log("All done!");
+//     return;
+//   }
+//   console.log(num);
+//   num--;
+//   countDown(num);
+// }
+
+// countDown(10);
+
+// Section 7-45. 두번째 재귀 함수
+
+// Our second recursive function
+function sumRange(num) {
+  if (num === 1) return 1;
+  return num + sumRange(num - 1);
 }
 
-countDown(10);
+console.log(sumRange(4));
