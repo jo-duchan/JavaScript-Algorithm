@@ -79,11 +79,22 @@ function sumRange(num) {
 
 // Section 7-46. 반복문으로 팩토리얼 구현하기
 
-function factorial(num) {
-  let total = 1;
-  for (let i = num; i > 1; i--) {
-    total *= i;
-  }
+// function factorial(num) {
+//   let total = 1;
+//   for (let i = num; i > 1; i--) {
+//     total *= i;
+//   }
 
-  return total;
+//   return total;
+// }
+
+// console.log(factorial(4));
+
+// Section 7-47. 재귀 호출로 팩토리얼 구현하기
+
+function factorial(num) {
+  if (num === 1) return 1;
+  return num * factorial(num - 1);
 }
+
+console.log(factorial(4));
