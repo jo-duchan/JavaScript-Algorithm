@@ -70,4 +70,9 @@ function sumRange(num) {
   return num + sumRange(num - 1);
 }
 
+// 4
+// 4 + 3
+// 4 + 3 + 2
+// 4 + 3 + 2 + 1 finish!
+
 console.log(sumRange(4));
