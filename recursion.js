@@ -92,9 +92,48 @@ function sumRange(num) {
 
 // Section 7-47. 재귀 호출로 팩토리얼 구현하기
 
-function factorial(num) {
-  if (num === 1) return 1;
-  return num * factorial(num - 1);
+// function factorial(num) {
+//   if (num === 1) return 1;
+//   return num * factorial(num - 1);
+// }
+
+// console.log(factorial(4));
+
+// Section 7-49. Helper 메소드 재귀
+
+// Helper Method Recursion
+
+function outer(input) {
+  var outerScopedVariable = [];
+
+  function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--);
+  }
+  helper(input);
+
+  return outerScopedVariable;
 }
 
-console.log(factorial(4));
+// Another Example
+// Let's try collect all of the odd values in an array!
+
+function collectOddValues(arr) {
+  let result = [];
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) {
+      return;
+    }
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0]);
+    }
+
+    helper(helperInput.slice(1));
+  }
+
+  helper(arr);
+
+  return result;
+}
