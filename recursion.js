@@ -137,3 +137,27 @@ function collectOddValues(arr) {
 
   return result;
 }
+
+// Section 7-50. 순수 재귀
+
+// Pure Recursion
+
+function collectOddValue(arr) {
+  let newArr = [];
+
+  if (arr.length === 0) {
+    return newArr;
+  }
+
+  if (arr[0] % 2 !== 0) {
+    newArr.push(arr[0]);
+  }
+
+  newArr = newArr.concat(collectOddValue(arr.slice(1)));
+  return newArr;
+}
+
+// Pure Recursion Tips
+// - For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them
+// - Remember that strings are immutable so you will need to use methods like slice, substr, or
+// - To make copies of objects use Object.assign, or the spread operator
