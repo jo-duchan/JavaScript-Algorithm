@@ -161,3 +161,21 @@ function collectOddValue(arr) {
 // - For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them
 // - Remember that strings are immutable so you will need to use methods like slice, substr, or
 // - To make copies of objects use Object.assign, or the spread operator
+
+// Section 8 재귀 문제 집합 코딩 연습 10:power
+
+function power(num1, num2) {
+  let result = 1;
+
+  if (num2 === 0) {
+    return result;
+  }
+
+  result = num1 * power(num1, num2 - 1);
+
+  return result;
+}
+
+// power(2,0) // 1
+// power(2,2) // 4
+// power(2,4) // 16
