@@ -179,3 +179,22 @@ function power(num1, num2) {
 // power(2,0) // 1
 // power(2,2) // 4
 // power(2,4) // 16
+
+// Section 8 재귀 문제 집합 코딩 연습 11:factorial
+
+function factorial(num) {
+  let result = 1;
+
+  if (num === 0) {
+    return result;
+  }
+
+  result = num * factorial(num - 1);
+
+  return result;
+}
+
+// factorial(1) // 1
+// factorial(2) // 2
+// factorial(4) // 24
+// factorial(7) // 5040
