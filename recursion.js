@@ -198,3 +198,38 @@ function factorial(num) {
 // factorial(2) // 2
 // factorial(4) // 24
 // factorial(7) // 5040
+
+// Section 8 재귀 문제 집합 코딩 연습 12:productOfArray
+
+function productOfArray(arr) {
+  let result = 1;
+  let lastIndex = arr.length - 1;
+
+  if (arr.length === 0) {
+    return result;
+  }
+
+  result = arr[lastIndex] * productOfArray(arr.slice(0, lastIndex));
+
+  return result;
+}
+
+// productOfArray([1,2,3]) // 6
+// productOfArray([1,2,3,10]) // 60
+// productOfArray([1, 2, 3, 4, 5]) // 120
+
+// Section 8 재귀 문제 집합 코딩 연습 13:recursiveRange
+
+function recursiveRange(num) {
+  let result = 0;
+  if (num === 0) {
+    return result;
+  }
+
+  result = num + recursiveRange(num - 1);
+
+  return result;
+}
+
+// recursiveRange(6) // 21
+// recursiveRange(10) // 55
