@@ -233,3 +233,18 @@ function recursiveRange(num) {
 
 // recursiveRange(6) // 21
 // recursiveRange(10) // 55
+
+// Section 8 재귀 문제 집합 코딩 연습 14:fib
+
+function fib(num) {
+  if (num <= 2) {
+    return 1;
+  }
+
+  return fib(num - 1) + fib(num - 2);
+}
+
+// fib(4) // 3
+// fib(10) // 55
+// fib(28) // 317811
+// fib(35) // 9227465
