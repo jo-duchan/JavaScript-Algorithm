@@ -248,3 +248,21 @@ function fib(num) {
 // fib(10) // 55
 // fib(28) // 317811
 // fib(35) // 9227465
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 15:reverse
+
+function reverse(str) {
+  let result = "";
+  let lastIndex = str.length - 1;
+
+  if (str.length === 0) {
+    return result;
+  }
+
+  result = str[lastIndex];
+
+  return result + reverse(str.slice(0, lastIndex));
+}
+
+// reverse('awesome') // 'emosewa'
+// reverse('rithmschool') // 'loohcsmhtir'
