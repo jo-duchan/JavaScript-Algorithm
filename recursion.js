@@ -266,3 +266,28 @@ function reverse(str) {
 
 // reverse('awesome') // 'emosewa'
 // reverse('rithmschool') // 'loohcsmhtir'
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 16:isPalindrome
+
+function isPalindrome(str) {
+  let result = true;
+  let lastIndex = str.length - 1;
+
+  if (str.length === 0) {
+    return result;
+  }
+
+  if (str[0] === str[lastIndex]) {
+    result = isPalindrome(str.slice(1, lastIndex));
+  } else {
+    result = false;
+  }
+
+  return result;
+}
+
+// isPalindrome('awesome') // false
+// isPalindrome('foobar') // false
+// isPalindrome('tacocat') // true
+// isPalindrome('amanaplanacanalpanama') // true
+// isPalindrome('amanaplanacanalpandemonium') // false
