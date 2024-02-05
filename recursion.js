@@ -291,3 +291,29 @@ function isPalindrome(str) {
 // isPalindrome('tacocat') // true
 // isPalindrome('amanaplanacanalpanama') // true
 // isPalindrome('amanaplanacanalpandemonium') // false
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 17:someRecursive
+
+const isOdd = (val) => val % 2 !== 0;
+
+function someRecursive(arr, callback) {
+  let result = false;
+  let lastIndex = arr.length - 1;
+
+  if (arr.length === 0) {
+    return result;
+  }
+
+  if (callback(arr[lastIndex])) {
+    result = true;
+  } else {
+    result = someRecursive(arr.slice(0, lastIndex), callback);
+  }
+
+  return result;
+}
+
+// someRecursive([1,2,3,4], isOdd) // true
+// someRecursive([4,6,8,9], isOdd) // true
+// someRecursive([4,6,8], isOdd) // false
+// someRecursive([4,6,8], val => val > 10); // false
