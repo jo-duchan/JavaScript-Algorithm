@@ -338,3 +338,28 @@ function flatten(arr) {
 // flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
 // flatten([[1],[2],[3]]) // [1,2,3]
 // flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 19 capitalizeFirst
+
+function capitalizeFirst(arr) {
+  let result = [];
+  let newString = "";
+
+  if (arr.length === 0) {
+    return result;
+  }
+
+  for (let i = 0; i < arr[0].length; i++) {
+    if (i === 0) {
+      newString += arr[0][i].toUpperCase();
+    } else {
+      newString += arr[0][i];
+    }
+  }
+
+  result = [newString, ...capitalizeFirst(arr.slice(1))];
+
+  return result;
+}
+
+// capitalizeFirst(['car','taco','banana']); // ['Car','Taco','Banana']
