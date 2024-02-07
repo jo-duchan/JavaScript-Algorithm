@@ -349,14 +349,7 @@ function capitalizeFirst(arr) {
     return result;
   }
 
-  for (let i = 0; i < arr[0].length; i++) {
-    if (i === 0) {
-      newString += arr[0][i].toUpperCase();
-    } else {
-      newString += arr[0][i];
-    }
-  }
-
+  newString = arr[0][0].toUpperCase() + arr[0].substr(1);
   result = [newString, ...capitalizeFirst(arr.slice(1))];
 
   return result;
