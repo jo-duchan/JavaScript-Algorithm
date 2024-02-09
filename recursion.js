@@ -397,3 +397,24 @@ var obj2 = {
 
 // nestedEvenSum(obj1); // 6
 // nestedEvenSum(obj2); // 10
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 21 capitalizeWords
+
+function capitalizeWords(arr) {
+  let result = [];
+  let words = "";
+
+  if (arr.length === 0) {
+    return "";
+  }
+
+  for (let i = 0; i < arr[0].length; i++) {
+    words += arr[0][i].toUpperCase();
+  }
+
+  result = [words, ...capitalizeWords(arr.slice(1))];
+
+  return result;
+}
+
+// capitalizeWords(["test", "i", "words"]) // ["TEST", "I", "WORDS"]
