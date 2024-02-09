@@ -421,7 +421,7 @@ function capitalizeWords(arr) {
 
 // Section 9 보너스 도전 재귀 문제 코딩 연습 22 stringifyNumbers
 
-let exObj = {
+let exObj1 = {
   num: 1,
   test: [],
   data: {
@@ -458,9 +458,45 @@ function stringifyNumbers(obj) {
   return newObj;
 }
 
-// stringifyNumbers(exObj)
+// stringifyNumbers(exObj1)
 // {
 //   num: '1',
 //   test: [],
 //   data: { val: '4', info: { isRight: true, random: '66' } }
 // }
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 23 collectStrings
+
+const exObj2 = {
+  stuff: "foo",
+  data: {
+    val: {
+      thing: {
+        info: "bar",
+        moreInfo: {
+          evenMoreInfo: {
+            weMadeIt: "baz",
+          },
+        },
+      },
+    },
+  },
+};
+
+function collectStrings(obj) {
+  let result = [];
+
+  Object.values(obj).map((value) => {
+    if (typeof value === "string") {
+      result.push(value);
+    }
+
+    if (typeof value === "object") {
+      result = result.concat(collectStrings(value));
+    }
+  });
+
+  return result;
+}
+
+// collectStrings(exObj2) // ["foo", "bar", "baz"])
