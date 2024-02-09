@@ -418,3 +418,49 @@ function capitalizeWords(arr) {
 }
 
 // capitalizeWords(["test", "i", "words"]) // ["TEST", "I", "WORDS"]
+
+// Section 9 보너스 도전 재귀 문제 코딩 연습 22 stringifyNumbers
+
+let exObj = {
+  num: 1,
+  test: [],
+  data: {
+    val: 4,
+    info: {
+      isRight: true,
+      random: 66,
+    },
+  },
+};
+
+function stringifyNumbers(obj) {
+  let keys;
+  let values;
+  let newObj = {};
+
+  keys = Object.keys(obj);
+  values = Object.values(obj).map((value) => {
+    if (typeof value === "number") {
+      return value.toString();
+    }
+
+    if (typeof value === "object" && !Array.isArray(value)) {
+      return stringifyNumbers(value);
+    }
+
+    return value;
+  });
+
+  keys.map((key, index) => {
+    newObj[`${key}`] = values[index];
+  });
+
+  return newObj;
+}
+
+// stringifyNumbers(exObj)
+// {
+//   num: '1',
+//   test: [],
+//   data: { val: '4', info: { isRight: true, random: '66' } }
+// }
